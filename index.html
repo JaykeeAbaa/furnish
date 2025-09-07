@@ -7,7 +7,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body class="antialiased bg-slate-50 text-slate-800 selection:bg-teal-200/60" style="font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji'">
+<body class="antialiased bg-slate-50 text-slate-800 selection:bg-teal-200/60 scroll-smooth" style="font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji'">
 
   <!-- Top Bar -->
   <div class="hidden md:block bg-slate-900 text-slate-200">
@@ -22,6 +22,7 @@
 
   <!-- Header -->
   <header class="sticky top-0 z-40 bg-white/80 backdrop-blur border-b border-slate-100">
+    <div id="scrollProgress" class="absolute left-0 top-0 h-0.5 bg-teal-600/80" style="width:0"></div>
     <div class="mx-auto max-w-7xl px-6">
       <div class="h-16 flex items-center justify-between">
         <a href="#" class="flex items-center gap-2">
@@ -88,11 +89,13 @@
           </p>
           <div class="mt-8 flex items-center gap-3">
             <a href="#products" class="inline-flex items-center gap-2 rounded-full bg-teal-600 text-white px-5 py-3 text-sm font-medium hover:bg-teal-700 transition">
-              Shop Now
+              <span class="sm:hidden">Shop</span>
+              <span class="hidden sm:inline">Shop Now</span>
               <i data-lucide="arrow-right" class="w-4 h-4"></i>
             </a>
             <a href="#about" class="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-5 py-3 text-sm font-medium hover:border-slate-400 transition">
-              Explore Collection
+              <span class="sm:hidden">Explore</span>
+              <span class="hidden sm:inline">Explore Collection</span>
               <i data-lucide="compass" class="w-4 h-4"></i>
             </a>
           </div>
@@ -121,6 +124,92 @@
         <div class="relative">
           <img alt="Contemporary living room with teal accents" class="h-full w-full object-cover" src="images/hero-living-room.jpg">
           <div class="absolute -bottom-10 -left-10 h-40 w-40 bg-white rounded-[2.5rem] hidden sm:block"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Journey / Process (User Story) -->
+  <section id="process" class="mx-auto max-w-7xl px-6 pt-16">
+    <div class="text-center">
+      <h2 class="text-3xl tracking-tight font-semibold">From Idea to Cozy Reality</h2>
+      <p class="mt-1 text-slate-600 text-sm">A simple path to your perfect setup</p>
+    </div>
+    <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="rounded-3xl border border-slate-200 bg-white p-6 reveal">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-medium px-2 py-1 rounded-full bg-teal-50 text-teal-700">Step 1</span>
+          <i data-lucide="search" class="w-5 h-5 text-teal-600"></i>
+        </div>
+        <h3 class="mt-3 text-lg font-semibold">Discover</h3>
+        <p class="mt-1 text-sm text-slate-600">Browse curated collections, trends, and inspirations tailored to your style.</p>
+        <a href="#inspire" class="mt-4 inline-flex items-center gap-2 text-sm font-medium text-teal-700 hover:text-teal-800">Explore ideas <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+      </div>
+      <div class="rounded-3xl border border-slate-200 bg-white p-6 reveal">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-medium px-2 py-1 rounded-full bg-teal-50 text-teal-700">Step 2</span>
+          <i data-lucide="sliders" class="w-5 h-5 text-teal-600"></i>
+        </div>
+        <h3 class="mt-3 text-lg font-semibold">Refine</h3>
+        <p class="mt-1 text-sm text-slate-600">Filter by size, material, and color. Save favorites for later.</p>
+        <a href="#products" class="mt-4 inline-flex items-center gap-2 text-sm font-medium text-teal-700 hover:text-teal-800">See products <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+      </div>
+      <div class="rounded-3xl border border-slate-200 bg-white p-6 reveal">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-medium px-2 py-1 rounded-full bg-teal-50 text-teal-700">Step 3</span>
+          <i data-lucide="sofa" class="w-5 h-5 text-teal-600"></i>
+        </div>
+        <h3 class="mt-3 text-lg font-semibold">Select</h3>
+        <p class="mt-1 text-sm text-slate-600">Pick pieces that fit your room and budget with confidence.</p>
+        <a href="#about" class="mt-4 inline-flex items-center gap-2 text-sm font-medium text-teal-700 hover:text-teal-800">Learn quality <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+      </div>
+      <div class="rounded-3xl border border-slate-200 bg-white p-6 reveal">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-medium px-2 py-1 rounded-full bg-teal-50 text-teal-700">Step 4</span>
+          <i data-lucide="truck" class="w-5 h-5 text-teal-600"></i>
+        </div>
+        <h3 class="mt-3 text-lg font-semibold">Enjoy</h3>
+        <p class="mt-1 text-sm text-slate-600">Fast delivery and easy setup—make yourself at home.</p>
+        <a href="#" class="mt-4 inline-flex items-center gap-2 text-sm font-medium text-teal-700 hover:text-teal-800">Track order <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Visual Story (Scrollytelling) -->
+  <section id="story" class="mx-auto max-w-7xl px-6 pt-16">
+    <div class="text-center">
+      <h2 class="text-3xl tracking-tight font-semibold">See the Space Come Alive</h2>
+      <p class="mt-1 text-slate-600 text-sm">Follow a living room transformation in three moments</p>
+    </div>
+    <div class="mt-8 space-y-6">
+      <div class="grid md:grid-cols-2 gap-6 items-center rounded-3xl border border-slate-200 bg-white p-4 md:p-6 overflow-hidden reveal">
+        <img class="h-56 md:h-72 w-full object-cover rounded-2xl" src="images/product-compact-sofa.jpg" alt="Choosing a sofa">
+        <div>
+          <h3 class="text-xl font-semibold">Pick the center piece</h3>
+          <p class="mt-2 text-sm text-slate-600">Start with a comfortable sofa that anchors the room. Neutral tones keep things calm, textures add depth.</p>
+          <div class="mt-4 inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-4 py-2.5 text-sm font-medium hover:border-slate-400">
+            Browse sofas <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </div>
+        </div>
+      </div>
+      <div class="grid md:grid-cols-2 gap-6 items-center rounded-3xl border border-slate-200 bg-white p-4 md:p-6 overflow-hidden reveal">
+        <div class="order-2 md:order-1">
+          <h3 class="text-xl font-semibold">Layer function and light</h3>
+          <p class="mt-2 text-sm text-slate-600">Add a coffee table and warm lighting for everyday use. Keep pathways clear for a relaxed flow.</p>
+          <div class="mt-4 inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-4 py-2.5 text-sm font-medium hover:border-slate-400">
+            See lighting <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </div>
+        </div>
+        <img class="order-1 md:order-2 h-56 md:h-72 w-full object-cover rounded-2xl" src="images/product-coffee-table.jpg" alt="Adding lighting and table">
+      </div>
+      <div class="grid md:grid-cols-2 gap-6 items-center rounded-3xl border border-slate-200 bg-white p-4 md:p-6 overflow-hidden reveal">
+        <img class="h-56 md:h-72 w-full object-cover rounded-2xl" src="images/inspiration-calm-corners.jpg" alt="Finishing touches">
+        <div>
+          <h3 class="text-xl font-semibold">Finish with personality</h3>
+          <p class="mt-2 text-sm text-slate-600">Plants and books soften edges, while art and textiles tell your story. You’re done.</p>
+          <a href="#products" class="mt-4 inline-flex items-center gap-2 rounded-full bg-teal-600 text-white px-4 py-2.5 text-sm font-medium hover:bg-teal-700">
+            Shop the look <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
         </div>
       </div>
     </div>
@@ -198,22 +287,22 @@
       </div>
     </div>
 
-    <div id="productScroller" class="mt-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5 overflow-x-auto scroll-smooth">
+    <div id="productScroller" class="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
       <!-- Card -->
-      <article class="group rounded-3xl border border-slate-200 bg-white overflow-hidden">
+      <article class="group rounded-3xl border border-slate-200 bg-white overflow-hidden h-full flex flex-col">
         <div class="relative">
-          <img class="h-48 w-full object-cover" alt="Grey armchair" src="images/product-lounge-chair.jpg">
+          <img class="w-full aspect-[4/3] object-cover" alt="Grey armchair" src="images/product-lounge-chair.jpg">
           <button class="absolute top-3 right-3 rounded-full bg-white/90 p-2 hover:bg-white transition fav-btn" aria-label="Wishlist">
             <i data-lucide="heart" class="w-4 h-4 text-slate-700"></i>
           </button>
         </div>
-        <div class="p-4">
+        <div class="p-4 flex-1 flex flex-col">
           <div class="flex items-center justify-between">
             <h3 class="text-base font-medium">Lounge Chair</h3>
             <span class="text-sm font-semibold text-slate-900">$219</span>
           </div>
           <p class="mt-1 text-xs text-slate-500">Walnut base, stone fabric</p>
-          <div class="mt-3 flex items-center justify-between">
+          <div class="mt-3 flex items-center justify-between mt-auto">
             <div class="flex items-center gap-0.5 text-amber-500">
               <i data-lucide="star" class="w-4 h-4"></i><i data-lucide="star" class="w-4 h-4"></i><i data-lucide="star" class="w-4 h-4"></i><i data-lucide="star" class="w-4 h-4"></i><i data-lucide="star-half" class="w-4 h-4"></i>
             </div>
@@ -224,20 +313,20 @@
         </div>
       </article>
 
-      <article class="group rounded-3xl border border-slate-200 bg-white overflow-hidden">
+      <article class="group rounded-3xl border border-slate-200 bg-white overflow-hidden h-full flex flex-col">
         <div class="relative">
-          <img class="h-48 w-full object-cover" alt="Blue lounge chair" src="images/product-accent-seat.jpg">
+          <img class="w-full aspect-[4/3] object-cover" alt="Blue lounge chair" src="images/product-accent-seat.jpg">
           <button class="absolute top-3 right-3 rounded-full bg-white/90 p-2 hover:bg-white transition fav-btn">
             <i data-lucide="heart" class="w-4 h-4 text-slate-700"></i>
           </button>
         </div>
-        <div class="p-4">
+        <div class="p-4 flex-1 flex flex-col">
           <div class="flex items-center justify-between">
             <h3 class="text-base font-medium">Accent Seat</h3>
             <span class="text-sm font-semibold text-slate-900">$179</span>
           </div>
           <p class="mt-1 text-xs text-slate-500">Ocean leatherette</p>
-          <div class="mt-3 flex items-center justify-between">
+          <div class="mt-3 flex items-center justify-between mt-auto">
             <div class="flex items-center gap-0.5 text-amber-500">
               <i data-lucide="star" class="w-4 h-4"></i><i data-lucide="star" class="w-4 h-4"></i><i data-lucide="star" class="w-4 h-4"></i><i data-lucide="star" class="w-4 h-4"></i><i data-lucide="star" class="w-4 h-4 text-slate-300"></i>
             </div>
@@ -248,20 +337,20 @@
         </div>
       </article>
 
-      <article class="group rounded-3xl border border-slate-200 bg-white overflow-hidden">
+      <article class="group rounded-3xl border border-slate-200 bg-white overflow-hidden h-full flex flex-col">
         <div class="relative">
-          <img class="h-48 w-full object-cover" alt="Pendant light" src="images/product-pendant-lamp.jpg">
+          <img class="w-full aspect-[4/3] object-cover" alt="Pendant light" src="images/product-pendant-lamp.jpg">
           <button class="absolute top-3 right-3 rounded-full bg-white/90 p-2 hover:bg-white transition fav-btn">
             <i data-lucide="heart" class="w-4 h-4 text-slate-700"></i>
           </button>
         </div>
-        <div class="p-4">
+        <div class="p-4 flex-1 flex flex-col">
           <div class="flex items-center justify-between">
             <h3 class="text-base font-medium">Pendant Lamp</h3>
             <span class="text-sm font-semibold text-slate-900">$129</span>
           </div>
           <p class="mt-1 text-xs text-slate-500">Matte black finish</p>
-          <div class="mt-3 flex items-center justify-between">
+          <div class="mt-3 flex items-center justify-between mt-auto">
             <div class="flex items-center gap-0.5 text-amber-500">
               <i data-lucide="star" class="w-4 h-4"></i><i data-lucide="star" class="w-4 h-4"></i><i data-lucide="star" class="w-4 h-4"></i><i data-lucide="star-half" class="w-4 h-4"></i><i data-lucide="star" class="w-4 h-4 text-slate-300"></i>
             </div>
@@ -272,20 +361,20 @@
         </div>
       </article>
 
-      <article class="group rounded-3xl border border-slate-200 bg-white overflow-hidden">
+      <article class="group rounded-3xl border border-slate-200 bg-white overflow-hidden h-full flex flex-col">
         <div class="relative">
-          <img class="h-48 w-full object-cover" alt="Coffee table" src="images/product-coffee-table.jpg">
+          <img class="w-full aspect-[4/3] object-cover" alt="Coffee table" src="images/product-coffee-table.jpg">
           <button class="absolute top-3 right-3 rounded-full bg-white/90 p-2 hover:bg-white transition fav-btn">
             <i data-lucide="heart" class="w-4 h-4 text-slate-700"></i>
           </button>
         </div>
-        <div class="p-4">
+        <div class="p-4 flex-1 flex flex-col">
           <div class="flex items-center justify-between">
             <h3 class="text-base font-medium">Coffee Table</h3>
             <span class="text-sm font-semibold text-slate-900">$249</span>
           </div>
           <p class="mt-1 text-xs text-slate-500">Smoked glass top</p>
-          <div class="mt-3 flex items-center justify-between">
+          <div class="mt-3 flex items-center justify-between mt-auto">
             <div class="flex items-center gap-0.5 text-amber-500">
               <i data-lucide="star" class="w-4 h-4"></i><i data-lucide="star" class="w-4 h-4"></i><i data-lucide="star" class="w-4 h-4"></i><i data-lucide="star" class="w-4 h-4"></i><i data-lucide="star" class="w-4 h-4"></i>
             </div>
@@ -296,20 +385,20 @@
         </div>
       </article>
 
-      <article class="group rounded-3xl border border-slate-200 bg-white overflow-hidden">
+      <article class="group rounded-3xl border border-slate-200 bg-white overflow-hidden h-full flex flex-col">
         <div class="relative">
-          <img class="h-48 w-full object-cover" alt="Grey sofa" src="images/product-compact-sofa.jpg">
+          <img class="w-full aspect-[4/3] object-cover" alt="Grey sofa" src="images/product-compact-sofa.jpg">
           <button class="absolute top-3 right-3 rounded-full bg-white/90 p-2 hover:bg-white transition fav-btn">
             <i data-lucide="heart" class="w-4 h-4 text-slate-700"></i>
           </button>
         </div>
-        <div class="p-4">
+        <div class="p-4 flex-1 flex flex-col">
           <div class="flex items-center justify-between">
             <h3 class="text-base font-medium">Compact Sofa</h3>
             <span class="text-sm font-semibold text-slate-900">$599</span>
           </div>
           <p class="mt-1 text-xs text-slate-500">2.5 seater, linen blend</p>
-          <div class="mt-3 flex items-center justify-between">
+          <div class="mt-3 flex items-center justify-between mt-auto">
             <div class="flex items-center gap-0.5 text-amber-500">
               <i data-lucide="star" class="w-4 h-4"></i><i data-lucide="star" class="w-4 h-4"></i><i data-lucide="star" class="w-4 h-4"></i><i data-lucide="star" class="w-4 h-4"></i><i data-lucide="star-half" class="w-4 h-4"></i>
             </div>
@@ -320,20 +409,20 @@
         </div>
       </article>
 
-      <article class="group rounded-3xl border border-slate-200 bg-white overflow-hidden">
+      <article class="group rounded-3xl border border-slate-200 bg-white overflow-hidden h-full flex flex-col">
         <div class="relative">
-          <img class="h-48 w-full object-cover" alt="Dining chairs" src="images/product-dining-set.jpg">
+          <img class="w-full aspect-[4/3] object-cover" alt="Dining chairs" src="images/product-dining-set.jpg">
           <button class="absolute top-3 right-3 rounded-full bg-white/90 p-2 hover:bg-white transition fav-btn">
             <i data-lucide="heart" class="w-4 h-4 text-slate-700"></i>
           </button>
         </div>
-        <div class="p-4">
+        <div class="p-4 flex-1 flex flex-col">
           <div class="flex items-center justify-between">
             <h3 class="text-base font-medium">Dining Set</h3>
             <span class="text-sm font-semibold text-slate-900">$899</span>
           </div>
           <p class="mt-1 text-xs text-slate-500">Oak table + 4 seats</p>
-          <div class="mt-3 flex items-center justify-between">
+          <div class="mt-3 flex items-center justify-between mt-auto">
             <div class="flex items-center gap-0.5 text-amber-500">
               <i data-lucide="star" class="w-4 h-4"></i><i data-lucide="star" class="w-4 h-4"></i><i data-lucide="star" class="w-4 h-4"></i><i data-lucide="star" class="w-4 h-4 text-slate-300"></i><i data-lucide="star" class="w-4 h-4 text-slate-300"></i>
             </div>
@@ -344,20 +433,20 @@
         </div>
       </article>
 
-      <article class="group rounded-3xl border border-slate-200 bg-white overflow-hidden">
+      <article class="group rounded-3xl border border-slate-200 bg-white overflow-hidden h-full flex flex-col">
         <div class="relative">
-          <img class="h-48 w-full object-cover" alt="Table lamp" src="images/product-table-lamp.jpg">
+          <img class="w-full aspect-[4/3] object-cover" alt="Table lamp" src="images/product-table-lamp.jpg">
           <button class="absolute top-3 right-3 rounded-full bg-white/90 p-2 hover:bg-white transition fav-btn">
             <i data-lucide="heart" class="w-4 h-4 text-slate-700"></i>
           </button>
         </div>
-        <div class="p-4">
+        <div class="p-4 flex-1 flex flex-col">
           <div class="flex items-center justify-between">
             <h3 class="text-base font-medium">Table Lamp</h3>
             <span class="text-sm font-semibold text-slate-900">$79</span>
           </div>
           <p class="mt-1 text-xs text-slate-500">Warm LED, fabric shade</p>
-          <div class="mt-3 flex items-center justify-between">
+          <div class="mt-3 flex items-center justify-between mt-auto">
             <div class="flex items-center gap-0.5 text-amber-500">
               <i data-lucide="star" class="w-4 h-4"></i><i data-lucide="star" class="w-4 h-4"></i><i data-lucide="star" class="w-4 h-4"></i><i data-lucide="star-half" class="w-4 h-4"></i><i data-lucide="star" class="w-4 h-4 text-slate-300"></i>
             </div>
@@ -368,14 +457,14 @@
         </div>
       </article>
 
-      <article class="group rounded-3xl border border-slate-200 bg-white overflow-hidden">
+      <article class="group rounded-3xl border border-slate-200 bg-white overflow-hidden h-full flex flex-col">
         <div class="relative">
-          <img class="h-48 w-full object-cover" alt="Bookshelf" src="images/product-bookshelf.jpg">
+          <img class="w-full aspect-[4/3] object-cover" alt="Bookshelf" src="images/product-bookshelf.jpg">
           <button class="absolute top-3 right-3 rounded-full bg-white/90 p-2 hover:bg-white transition fav-btn">
             <i data-lucide="heart" class="w-4 h-4 text-slate-700"></i>
           </button>
         </div>
-        <div class="p-4">
+        <div class="p-4 flex-1 flex flex-col">
           <div class="flex items-center justify-between">
             <h3 class="text-base font-medium">Open Bookshelf</h3>
             <span class="text-sm font-semibold text-slate-900">$349</span>
@@ -451,7 +540,7 @@
       </a>
     </div>
 
-    <div class="mt6 grid md:grid-cols-3 gap-6">
+    <div class="mt-6 grid md:grid-cols-3 gap-6">
       <div class="relative overflow-hidden rounded-3xl">
         <img class="h-72 w-full object-cover" src="images/inspiration-dream-design.jpg" alt="Inspiration living room">
         <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
@@ -519,6 +608,32 @@
           <i data-lucide="star" class="w-4 h-4"></i><i data-lucide="star" class="w-4 h-4"></i><i data-lucide="star" class="w-4 h-4"></i><i data-lucide="star" class="w-4 h-4"></i><i data-lucide="star" class="w-4 h-4"></i>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="mx-auto max-w-7xl px-6 pt-16">
+    <div class="text-center">
+      <h2 class="text-3xl tracking-tight font-semibold">Frequently Asked Questions</h2>
+      <p class="mt-1 text-slate-600 text-sm">Everything you need to know</p>
+    </div>
+    <div class="mt-8 grid md:grid-cols-2 gap-4">
+      <details class="rounded-2xl border border-slate-200 bg-white p-5 reveal">
+        <summary class="cursor-pointer text-sm font-medium list-none flex items-center justify-between">What is your return policy? <i data-lucide="chevron-down" class="w-4 h-4"></i></summary>
+        <p class="mt-3 text-sm text-slate-600">We offer a 30-day money-back guarantee. Items must be in original condition and packaging.</p>
+      </details>
+      <details class="rounded-2xl border border-slate-200 bg-white p-5 reveal">
+        <summary class="cursor-pointer text-sm font-medium list-none flex items-center justify-between">How fast is shipping? <i data-lucide="chevron-down" class="w-4 h-4"></i></summary>
+        <p class="mt-3 text-sm text-slate-600">Most orders arrive within 3–7 business days. Large items may take longer.</p>
+      </details>
+      <details class="rounded-2xl border border-slate-200 bg-white p-5 reveal">
+        <summary class="cursor-pointer text-sm font-medium list-none flex items-center justify-between">Do you offer assembly? <i data-lucide="chevron-down" class="w-4 h-4"></i></summary>
+        <p class="mt-3 text-sm text-slate-600">Yes, optional in‑home assembly is available in many locations at checkout.</p>
+      </details>
+      <details class="rounded-2xl border border-slate-200 bg-white p-5 reveal">
+        <summary class="cursor-pointer text-sm font-medium list-none flex items-center justify-between">Can I see materials in person? <i data-lucide="chevron-down" class="w-4 h-4"></i></summary>
+        <p class="mt-3 text-sm text-slate-600">Order free swatches or visit a partner showroom in select cities.</p>
+      </details>
     </div>
   </section>
 
@@ -590,6 +705,10 @@
         menuBtn.addEventListener('click', () => {
           mobileMenu.classList.toggle('hidden');
         });
+        // close on link click
+        mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+        }));
       }
 
       // Product scroller
@@ -599,6 +718,17 @@
       if (left && right && scroller) {
         left.addEventListener('click', () => scroller.scrollBy({ left: -320, behavior: 'smooth' }));
         right.addEventListener('click', () => scroller.scrollBy({ left: 320, behavior: 'smooth' }));
+        // drag/touch support
+        let isDown = false, startX = 0, scrollLeftPos = 0;
+        const start = x => { isDown = true; startX = x; scrollLeftPos = scroller.scrollLeft; scroller.classList.add('cursor-grabbing'); };
+        const move = x => { if (!isDown) return; const delta = x - startX; scroller.scrollLeft = scrollLeftPos - delta; };
+        const end = () => { isDown = false; scroller.classList.remove('cursor-grabbing'); };
+        scroller.addEventListener('mousedown', e => start(e.pageX));
+        scroller.addEventListener('mousemove', e => move(e.pageX));
+        window.addEventListener('mouseup', end);
+        scroller.addEventListener('touchstart', e => start(e.touches[0].pageX), { passive: true });
+        scroller.addEventListener('touchmove', e => move(e.touches[0].pageX), { passive: true });
+        scroller.addEventListener('touchend', end);
       }
 
       // Wishlist heart toggle (visual emphasis via color/scale)
@@ -638,6 +768,50 @@
 
       // Year in footer
       document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Scroll progress
+      const progress = document.getElementById('scrollProgress');
+      const setProgress = () => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        if (progress) progress.style.width = pct + '%';
+      };
+      setProgress();
+      window.addEventListener('scroll', setProgress, { passive: true });
+
+      // Reveal on scroll
+      const revealEls = document.querySelectorAll('.reveal');
+      revealEls.forEach(el => { el.style.opacity = '0'; el.style.transform = 'translateY(16px)'; el.style.transition = 'opacity .6s ease, transform .6s ease'; });
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      revealEls.forEach(el => io.observe(el));
+
+      // Scrollspy for nav
+      const navLinks = Array.from(document.querySelectorAll('header nav a'));
+      const sectionIds = navLinks.map(a => a.getAttribute('href')).filter(Boolean).filter(h => h.startsWith('#'));
+      const sections = sectionIds.map(id => document.querySelector(id)).filter(Boolean);
+      const activate = id => {
+        navLinks.forEach(a => {
+          const isActive = a.getAttribute('href') === id;
+          a.classList.toggle('text-slate-900', isActive);
+          a.classList.toggle('text-slate-600', !isActive);
+          a.classList.toggle('font-semibold', isActive);
+        });
+      };
+      const spy = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if (e.isIntersecting) activate('#' + e.target.id);
+        });
+      }, { rootMargin: '-40% 0px -55% 0px' });
+      sections.forEach(s => spy.observe(s));
     });
   </script>
 
